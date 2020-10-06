@@ -12,3 +12,9 @@ Feature: Validate register operation for user with valid and invalid parameters 
 
     Examples:
       |read ('../../Data/RegisterAPI.csv')|
+
+    Scenario: Register user with valid email and no password header and value as parameter
+      Given path '/api/register'
+      And request {"email":"sydney@fife"}
+      When method POST
+      Then status 400
