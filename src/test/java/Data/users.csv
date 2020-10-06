@@ -2,8 +2,8 @@
 2,200,GET,Valid id as input
 4,200,GET,Valid id as input
 5,200,GET,Valid id as input
-&,404,GET,Special character as Input
- ,404,GET,Empty space as Input
-A,404,GET,Alphabet as input
-999,404,GET,Invalid Number as input
--1,404,GET,Invalid Number as input
+&,400,GET,Special character as Input
+ ,400,GET,Empty space as Input
+A,400,GET,Alphabet as input
+999,400,GET,Invalid Number as input
+-1,400,GET,Invalid Number as input

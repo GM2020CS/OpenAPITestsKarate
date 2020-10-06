@@ -1,0 +1,9 @@
+name,job,method,status,Scenario
+morpheus,leader,POST,201,Valid name as input
+madhur,Quality Assurance,POST,201,Valid name as input
+%,leader,POST,404,Special char as name
+ ,leader,POST,400,Empty as name
+123,leader,POST,400,numeric as name
+morpheus,%,POST,400,Special char as job
+morpheus, ,POST,400,Empty as job
+morpheus,123,POST,400,numeric as job

@@ -1,63 +1,35 @@
-Feature: Perform all the CRUD operations on User module with valid and invalid inputs
+Feature: Validate CRUD operations for user creation with valid and invalid parameters
 
   Background:
-
     * url 'https://reqres.in'
 
-  Scenario Outline : create a user with valid and invalid input
-    * def users =
-    """
-    {
-    "name": "name",
-    "job": "job"
-}
-    """
-
-    Given path '/api/users'
-    And request users
-    When method POST
+  Scenario Outline: Create User using name and job detail with valid and invalid parameters
+    Given path 'api/users'
+    And request { name:<name>, job:<job> }
+    When method <method>
     Then status <status>
     * print response
 
     Examples:
-      | read('../../Data/userCRUD.csv') |
+      |read('../../Data/CreateAPI.csv')|
 
 
-
-  Scenario: Update job field for a created user by PUT method
-
-    * def user =
-      """
- {
-    "name": "morpheus",
-    "job": "zion resident"
-}
-      """
-    Given path '/api/users/2'
-    And request user
-    When method PUT
-    Then status 200
+  Scenario Outline: Update User using PATCH and UPDATE method with valid and invalid parameters
+    Given path 'api/users/2'
+    And request { name:<name>, job:<job> }
+    When method <method>
+    Then status <status>
     * print response
 
-  Scenario: Update job field for a created user by PATCH method
+    Examples:
+      |read ('../../Data/UpdateAPI.csv')|
 
-    * def user =
-      """
- {
-    "name": "morpheus",
-    "job": "zion President"
-}
-      """
-    Given path '/api/users/2'
-    And request user
-    When method PATCH
-    Then status 200
+
+
+  Scenario Outline: Delete User using valid and invalid parameters
+    Given path 'api/users/<id>'
+    When method <method>
+    Then status <status>
     * print response
-
-
-  Scenario: Delete a created user by Delete method
-
-    Given path '/api/users/2'
-    When method DELETE
-    Then status 204
-    * print response
+    Examples:
+      |read ('../../Data/DeleteAPI.csv')|

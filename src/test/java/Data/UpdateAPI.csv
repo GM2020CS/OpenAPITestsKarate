@@ -1,0 +1,17 @@
+name,job,method,status,Scenario
+morpheus,zion resident,PUT,200,Valid name as input
+madhur,Quality Assurance,PUT,200,Valid name as input
+%,leader,PUT,400,Special char as name
+ ,leader,PUT,400,Empty as name
+123,leader,PUT,400,numeric as name
+morpheus,%,PUT,400,Special char as job
+morpheus, ,PUT,400,Empty as job
+morpheus,123,PUT,400,numeric as job
+morpheus,zion resident,PATCH,200,Valid name as input
+madhur,Quality Assurance,PATCH,200,Valid name as input
+%,leader,PATCH,400,Special char as name
+ ,leader,PATCH,400,Empty as name
+123,leader,PATCH,400,numeric as name
+morpheus,%,PATCH,400,Special char as job
+morpheus, ,PATCH,400,Empty as job
+morpheus,123,PATCH,400,numeric as job

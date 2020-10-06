@@ -1,0 +1,9 @@
+email,password,method,status,response,Scenario
+eve.holt@reqres.in,pistol,POST,200,"{""id"":4,""token"":""QpwL5tke4Pnpja7X4""}",Valid email and password as  input
+ ,pistol,POST,400,"{""error"":""Missing email or username""}",Invalid email and password as  input
+22,pistol,POST,400,"{""error"":""Note: Only defined users succeed registration""}",Invalid email and password as  input
+#$%,pistol,POST,400,"{""error"":""Note: Only defined users succeed registration""}",Invalid email and password as  input
+sydney@fife,null,POST,400,"{""error"":""Missing password""}",Valid email and null password as  input
+sydney@fife,,POST,400," {""error"":""Missing password""}",Valid email and blank password as  input
+sydney@fife,22,POST,400,"{""error"":""Note: Only defined users succeed registration""}",Valid email and invalid password as  input
+sydney@fife,#$%,POST,400,"{""error"":""Note: Only defined users succeed registration""}",Valid email and invalid password as  input

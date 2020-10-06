@@ -1,0 +1,6 @@
+id,method,status,Scenario
+2,DELETE,204,Valid name as input
+3,DELETE,204,Valid name as input
+%,DELETE,400,Special char as name
+ ,DELETE,400,Empty as name
+123,DELETE,400,numeric as name

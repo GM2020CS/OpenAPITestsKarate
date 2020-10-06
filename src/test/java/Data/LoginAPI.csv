@@ -1,0 +1,10 @@
+email,password,method,status,response,Scenario
+eve.holt@reqres.in,cityslicka,POST,200,"{""token"":""QpwL5tke4Pnpja7X4""}",Valid email and password as  input
+ ,cityslicka,POST,400,"{""error"":""Missing email or username""}",Invalid email and password as  input
+22,cityslicka,POST,400,"{""error"":""user not found""}",Invalid email and password as  input
+#$%,cityslicka,POST,400,"{""error"":""user not found""}",Invalid email and password as  input
+eve.holt@reqres.in,,POST,400,"{""error"":""password not found""}",Valid email and blank password as  input
+eve.holt@reqres.in,22,POST,400,"{""error"":""invalid password""}",Valid email and invalid password as  input
+eve.holt@reqres.in,#$%,POST,400,"{""error"":""invalid password""}",Valid email and invalid password as  input
+null,cityslicka,POST,400,"{""error"":""Missing email or username""}",Valid password and null email as  input
+eve.holt@reqres.in,null,POST,400,"{""error"":""password not found""}",Valid email and null password as  input
