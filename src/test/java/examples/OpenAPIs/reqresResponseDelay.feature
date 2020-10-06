@@ -4,8 +4,8 @@ Feature: Validate delay in response against valid and invalid input
 Scenario Outline: valid and invalid parameters in get request for delay in response.
 
 
-  Given path '/api/users?delay=<id>'
-  And request <id>
+  Given path '/api/users'
+  And param delay = <id>
   When method GET
   Then status <status>
 
