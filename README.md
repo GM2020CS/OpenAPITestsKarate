@@ -78,7 +78,7 @@ we have single scenario here using outline method passing invlaid and valid para
 we have configured a conaosildated report for the whole run, motivation was from link https://github.com/intuit/karate#test-reports
 we have set up Open RestAPI's report under Target and also added parallelruns and TestParallel class.
 
-##Please Note
+## Please Note
   
  Assertions for expected results and response are based on API response code standards https://restfulapi.net/http-status-codes/ which ensures and Bad request for example should be 400 and unauthorised access should be 404 and so on and so forth. 
 
